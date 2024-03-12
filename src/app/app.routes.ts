@@ -1,23 +1,14 @@
-import { Routes } from '@angular/router';
-import {HomeComponent} from "./home/home.component";
-import {ClassDetailsComponent} from "./class-details/class-details.component";
-import {SignInComponent} from "./sign-in/sign-in.component";
+import {Routes} from '@angular/router';
+import {StudentsTableComponent} from "./paths/students-table/students-table.component";
 
-const routeConfig: Routes = [
+export const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
-    title: 'Home Page'
+    redirectTo: 'students',
+    pathMatch: 'full'
   },
   {
-    path: 'signIn',
-    component: SignInComponent,
-    title: 'Sign In Page'
-  },
-  {
-    path: 'classInfo/:id',
-    component: ClassDetailsComponent,
-    title: 'ClassInfo Page'
+    path: 'students',
+    component: StudentsTableComponent
   }
 ];
-export default routeConfig;

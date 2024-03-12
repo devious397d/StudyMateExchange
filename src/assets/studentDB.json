@@ -1,0 +1,64 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "lastName": "Suzuki",
+      "firstName": "Hiro",
+      "language": "Japanese",
+      "sessions": [
+        1,
+        4
+      ]
+    },
+    {
+      "id": 2,
+      "lastName": "Tanaka",
+      "firstName": "Kenshi",
+      "language": "Japanese",
+      "sessions": [
+        1,
+        4
+      ]
+    },
+    {
+      "id": 3,
+      "lastName": "Martinez",
+      "firstName": "Diego",
+      "language": "Spanish",
+      "sessions": [
+        2,
+        5
+      ]
+    },
+    {
+      "id": 4,
+      "lastName": "Rodriguez",
+      "firstName": "Maria",
+      "language": "Spanish",
+      "sessions": [
+        2,
+        5
+      ]
+    },
+    {
+      "id": 5,
+      "lastName": "Patel",
+      "firstName": "Aarav",
+      "language": "Hindi",
+      "sessions": [
+        3,
+        6
+      ]
+    },
+    {
+      "id": 6,
+      "lastName": "Khan",
+      "firstName": "Ayesha",
+      "language": "Hindi",
+      "sessions": [
+        3,
+        6
+      ]
+    }
+  ]
+}
