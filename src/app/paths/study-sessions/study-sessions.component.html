@@ -1,8 +1,10 @@
-<mat-grid-list cols="3" rowHeight="200px">
+<mat-grid-list cols="2" rowHeight="200px" [gutterSize]="'20px'">
   @for (session of sessions; track session) {
     <mat-grid-tile>
       <article>
-        <p>{{ session.title }}</p>
+        <p>
+          <button mat-button (click)="openDialog()">{{ session.title }}</button>
+        </p>
         <p>{{ session.language }}</p>
         <p>{{ session.date }}</p>
         <p>{{ session.time }}</p>

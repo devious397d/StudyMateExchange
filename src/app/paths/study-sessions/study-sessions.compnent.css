@@ -1,4 +1,7 @@
 mat-grid-tile {
-  background: lightblue;
-
+  border-radius: 50px;
+  background: #C3C3C3;
+}
+article{
+  text-align: center;
 }

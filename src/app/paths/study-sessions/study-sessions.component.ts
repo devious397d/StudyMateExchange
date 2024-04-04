@@ -14,7 +14,18 @@ import {
   MatRowDef,
   MatTable,
 } from "@angular/material/table";
-import {MatGridList, MatGridTile} from "@angular/material/grid-list";
+import {
+  MatGridList,
+  MatGridTile
+} from "@angular/material/grid-list";
+import {
+  MatDialogModule,
+  MatDialog
+} from "@angular/material/dialog";
+import {
+  MatButton
+} from "@angular/material/button";
+
 
 @Component({
   selector: 'app-study-sessions',
@@ -31,7 +42,9 @@ import {MatGridList, MatGridTile} from "@angular/material/grid-list";
     MatTable,
     MatHeaderCellDef,
     MatGridList,
-    MatGridTile
+    MatGridTile,
+    MatDialogModule,
+    MatButton
   ],
   providers: [StudentService],
   styleUrl: 'study-sessions.compnent.css',
@@ -39,16 +52,29 @@ import {MatGridList, MatGridTile} from "@angular/material/grid-list";
 })
 export class StudySessionsComponent implements OnInit {
   sessions: StudySession[] = [];
-
-  constructor(private studentService: StudentService) {
+  constructor(private studentService: StudentService,
+              public dialog: MatDialog) {
   }
-
   ngOnInit(): void {
     this.getSessions();
   }
-
   getSessions(): void {
     this.studentService.getSessions()
       .subscribe(sessions => this.sessions = sessions);
   }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(DialogContentExampleDialog);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 }
+@Component({
+  selector: 'dialog-content',
+  templateUrl: './dialog-content.html',
+  standalone: true,
+  imports: [MatDialogModule, MatButton],
+})
+export class DialogContentExampleDialog {}
