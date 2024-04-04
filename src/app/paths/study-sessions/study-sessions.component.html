@@ -1,0 +1,12 @@
+<mat-grid-list cols="3" rowHeight="200px">
+  @for (session of sessions; track session) {
+    <mat-grid-tile>
+      <article>
+        <p>{{ session.title }}</p>
+        <p>{{ session.language }}</p>
+        <p>{{ session.date }}</p>
+        <p>{{ session.time }}</p>
+      </article>
+    </mat-grid-tile>
+  }
+</mat-grid-list>

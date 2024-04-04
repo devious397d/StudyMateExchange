@@ -1,0 +1,64 @@
+{
+  "sessions": [
+    {
+      "id": 1,
+      "title": "Navigating Through LA County",
+      "language": "Korean",
+      "instructor": "Zakchaios Frank",
+      "description": "I would like to introduce how to navigate your way through LA county, mainly going over what to avoid and what to look for while out and about.",
+      "date": "2/2/24",
+      "time": "6:30 PM",
+      "meetinglocation": "Courtyard in the Libary"
+    },
+    {
+      "id": 2,
+      "title": "Food Exchange",
+      "language": "Korean, Chinese, Japanese",
+      "instructorName": "Hilmar Elliot",
+      "description": "This is a chance to exchange food with other people. Think of it as a potluck!",
+      "date": "2/25/24",
+      "time": "12:15 PM",
+      "meetinglocation": "Cafeteria"
+    },
+    {
+      "id": 3,
+      "title": "Help With Physics",
+      "language": "Vietnamese",
+      "instructorName": "Sam Jackson",
+      "description": "I need some help with physics but I learn well with groups of people. So if anyone is intrested in a group study, join in!",
+      "date": "2/29/24",
+      "time": "3:00 PM",
+      "meetinglocation": "Library, 2nd floor right outside the elevators."
+    },
+    {
+      "id": 4,
+      "title": "International Student Meet Up",
+      "language": "All",
+      "instructorName": "György Meyers",
+      "description": "Start of the NEW Semester! Let's meet up and work together to make it a great semester!",
+      "date": "2/26/24",
+      "time": "4:30 PM",
+      "meetinglocation": "Green Lawn in front of the Cafeteria"
+    },
+    {
+      "id": 5,
+      "title": "Learning How To Stay Safe While Out In The Club",
+      "language": "English, Korean",
+      "instructorName": "Aarav Patel",
+      "description": "This class is for everyone and anyone wanting to stay safe while out having fun with friends. Not everyone out there is bad, you just have to keep your eyes out for the ones being bad.",
+      "date": "3/9/24",
+      "time": "5:00 PM",
+      "meetinglocation": "Green Lawn in front of the Cafeteria"
+    },
+    {
+      "id": 6,
+      "title": "Budgeting!",
+      "language": "Spanish",
+      "instructorName": "Maria Rodriguez",
+      "description": "In a new place, the price difference can hurt. Come join the class and I can try to help budget!",
+      "date": "4/20/24",
+      "time": "1:30 PM",
+      "meetinglocation": "SAC-2, Will Have A Post On Door For Session"
+    }
+  ]
+}

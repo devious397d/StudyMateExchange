@@ -1,10 +1,10 @@
-import {Time} from "@angular/common";
-
 export interface StudySession {
   id: number;
   title: string;
   language: string;
   instructor: string;
-  date: Date;
-  time: Time;
+  description: string;
+  date: string;
+  time: string;
+  meetinglocation: string;
 }
