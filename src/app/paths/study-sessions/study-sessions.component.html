@@ -2,12 +2,10 @@
   @for (session of sessions; track session) {
     <mat-grid-tile>
       <article>
-        <p>
-          <button mat-button (click)="openDialog()">{{ session.title }}</button>
-        </p>
-        <p>{{ session.language }}</p>
-        <p>{{ session.date }}</p>
-        <p>{{ session.time }}</p>
+        <button mat-button (click)="openDialog(session.id)" style="font-size: 20px">{{ session.title }}</button> <br><br>
+        {{ session.language }} <br>
+        {{ session.date }} <br>
+        {{ session.time }} <br>
       </article>
     </mat-grid-tile>
   }
