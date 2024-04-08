@@ -1,15 +1,2 @@
-<h2 mat-dialog-title xmlns="http://www.w3.org/1999/html">{{data.title}}</h2>
-<mat-dialog-content>
-  <p>Hosted By: {{data.instructor}} </p>
-  <p style="color: black">
-    Description Of Sessions: <br>
-    {{data.description}} <br><br>
-    Date: {{data.date}} <br>
-    Time: {{data.time}} <br>
-    Meeting Location: {{data.meetinglocation}} <br>
-  </p>
-</mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button (click)="onJoinClick()">Join</button>
-  <button mat-button mat-dialog-close>Cancel</button>
-</mat-dialog-actions>
+<h2>{{ data.title }}</h2>
+<p> {{ data.description }}</p>

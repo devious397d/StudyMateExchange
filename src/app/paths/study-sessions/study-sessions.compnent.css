@@ -5,3 +5,13 @@ mat-grid-tile {
 article{
   text-align: center;
 }
+div{
+  padding-left: 50%;
+}
+.mat-form-field{
+width: 500px;
+}
+
+.card-rightside{
+
+}

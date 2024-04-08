@@ -1,0 +1,36 @@
+<mat-dialog-content>
+  <mat-form-field [style.width.px]=500>
+    <mat-label>Title Of Session</mat-label>
+    <input matInput [(ngModel)]="data.ctitle">
+  </mat-form-field><br>
+  <mat-form-field [style.width.px]=500>
+    <mat-label>Main Language Of Session</mat-label>
+    <input matInput [(ngModel)]="data.clanguage">
+  </mat-form-field><br>
+  <mat-form-field [style.width.px]=500>
+    <mat-label>Your Name</mat-label>
+    <input matInput [(ngModel)]="data.cinstructor">
+  </mat-form-field><br>
+  <mat-form-field [style.width.px]=500>
+    <mat-label>Description Of Session</mat-label>
+    <input matInput [(ngModel)]="data.cdescription">
+  </mat-form-field><br>
+  <mat-form-field [style.width.px]=500>
+    <mat-label>Date Of Session</mat-label>
+    <input matInput [(ngModel)]="data.cdate">
+  </mat-form-field><br>
+  <mat-form-field [style.width.px]=500>
+    <mat-label>Time Of Session</mat-label>
+    <input matInput [(ngModel)]="data.ctime">
+  </mat-form-field><br>
+  <mat-form-field [style.width.px]=500>
+    <mat-label>Where Are You Meeting?</mat-label>
+    <input matInput [(ngModel)]="data.cmeetinglocation">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button mat-button (click)="submitCreateSession(data.ctitle,data.clanguage,data.cinstructor,data.cdescription,data.cdate,data.ctime,data.cmeetinglocation)" [style.font-size.px] = 20>Create New Session!</button>
+</mat-dialog-actions>
+<mat-dialog-actions align="center">
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

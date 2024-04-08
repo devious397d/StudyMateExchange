@@ -1,8 +1,24 @@
+<mat-card class="card-rightside">
+  <mat-card-header>
+    <mat-card-title>
+      Filters
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    Search By Title Of Session
+    <input mat-input>
+  </mat-card-content>
+</mat-card>
+
+<div class="button_center">
+  <button mat-button (click)="openCreateClassDialog()">Create Session</button>
+</div>
+
 <mat-grid-list cols="2" rowHeight="200px" [gutterSize]="'20px'">
   @for (session of sessions; track session) {
     <mat-grid-tile>
       <article>
-        <button mat-button (click)="openDialog(session.id)" style="font-size: 20px">{{ session.title }}</button> <br><br>
+        <button mat-button (click)="openSessionDialog(session.id)" style="font-size: 20px">{{ session.title }}</button> <br><br>
         {{ session.language }} <br>
         {{ session.date }} <br>
         {{ session.time }} <br>
