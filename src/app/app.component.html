@@ -1,7 +1,42 @@
 <app-sign-in></app-sign-in>
-<div class="divider"></div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyMate</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .top-bar {
+            position: relative;
+            background-image: url('assets/CSUDH_header.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .logo {
+            width: 100px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .textTitle {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
 <div class="top-bar">
     <img src="assets/logo.png" alt="Logo" class="logo">
     <span class="textTitle">StudyMate</span>
 </div>
+</body>
 <app-side-navigation></app-side-navigation>

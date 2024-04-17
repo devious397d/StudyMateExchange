@@ -1,24 +1,9 @@
-/* Example styles for input fields */
-input[type="text"], input[type="password"] {
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+
+.form-group {
+  margin-bottom: 16px;
 }
 
-/* Example style for submit button */
-input[type="submit"] {
-  background-color: #820036;
+button {
+  background-color: red;
   color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-/* Example style for form labels */
-label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
 }

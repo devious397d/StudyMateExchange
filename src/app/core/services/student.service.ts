@@ -13,18 +13,31 @@ export class StudentService {
   private studentURL = 'assets/studentDB.json';
   private sessionsURL = 'assets/sessionsDB.json';
 
-
   constructor(private http: HttpClient) {
   }
 
-  getStudents(): Observable<Student[]> {
+  getStudents(text: string = ''): Observable<Student[]> {
     return this.http.get<{ students: Student[] }>(this.studentURL).pipe(
-      map(({students}) => students)
+        map(({students}) => this.filterStudents(students, text))
     );
   }
+
+  filterStudents(students: Student[], text: string): Student[] {
+    if (text == '') {
+      return students;
+    }
+
+    let student: Student[] = [];
+    let temp_arr: Student[] = [];
+    temp_arr = students.filter(students => students?.firstName.toLowerCase().includes(text.toLowerCase()));
+
+    return students.filter(students => students?.firstName.toLowerCase().includes(text.toLowerCase()));;
+  }
+
+
   getSessions(): Observable<StudySession[]>{
     return this.http.get<{ sessions: StudySession[] }>(this.sessionsURL).pipe(
-      map(({sessions}) => sessions)
+        map(({sessions}) => sessions)
     );
   }
 }

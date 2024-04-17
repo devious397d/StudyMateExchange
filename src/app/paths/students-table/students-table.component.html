@@ -1,3 +1,5 @@
+<script src="../../search-bar/search-bar.component.ts"></script>
+
 <table mat-table [dataSource]="students">
   <!-- ID Column -->
   <ng-container matColumnDef="id">
@@ -32,3 +34,5 @@
   <tr mat-header-row *matHeaderRowDef="['id', 'lastName', 'firstName', 'language', 'sessions']"></tr>
   <tr mat-row *matRowDef="let row; columns: ['id', 'lastName', 'firstName', 'language', 'sessions'];"></tr>
 </table>
+
+

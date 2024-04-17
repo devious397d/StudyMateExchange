@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Student} from "../../core/types/student";
 import {StudentService} from "../../core/services/student.service";
+import {SearchBarComponent} from "../../search-bar/search-bar.component";
 import {
   MatCell,
   MatCellDef,
@@ -27,7 +28,8 @@ import {
     MatRow,
     MatRowDef,
     MatHeaderRow,
-    MatHeaderRowDef
+    MatHeaderRowDef,
+    SearchBarComponent
   ],
   providers: [StudentService],
   templateUrl: './students-table.component.html'
@@ -42,8 +44,9 @@ export class StudentsTableComponent implements OnInit {
     this.getStudents();
   }
 
-  getStudents(): void {
+  getStudents(text: string = ''): void {
     this.studentService.getStudents()
       .subscribe(students => this.students = students);
   }
+
 }
