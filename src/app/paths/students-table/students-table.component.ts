@@ -49,4 +49,9 @@ export class StudentsTableComponent implements OnInit {
       .subscribe(students => this.students = students);
   }
 
+  receiveMessage(message: string) {
+    console.log("got message");
+    this.getStudents(message);
+  }
+
 }

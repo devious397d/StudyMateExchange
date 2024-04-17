@@ -35,4 +35,7 @@
   <tr mat-row *matRowDef="let row; columns: ['id', 'lastName', 'firstName', 'language', 'sessions'];"></tr>
 </table>
 
+<div>
+    <app-search-bar (messageEvent)="receiveMessage($event)"></app-search-bar>
+</div>
 
