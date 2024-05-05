@@ -1,4 +1,5 @@
-<app-sign-in></app-sign-in>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,8 +19,17 @@
             height: 200px;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
             color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            margin: 0 auto; /* Center horizontally */
         }
 
         .logo {
@@ -29,14 +39,36 @@
         }
 
         .textTitle {
-            font-size: 24px;
+            font-size: 48px;
+            margin-top: 5px;
+            color: rgba(255, 255, 255, 1.0);
         }
+
+        .textTitle .study {
+            color: #e5e5e5;
+        }
+
+        .textTitle .mate {
+            color: #ffcc00;
+        }
+
     </style>
 </head>
 <body>
 <div class="top-bar">
-    <img src="assets/logo.png" alt="Logo" class="logo">
-    <span class="textTitle">StudyMate</span>
+    <div class="logo-container">
+        <img src="assets/logo.png" alt="Logo" class="logo">
+        <span class="textTitle"><span class="study">Study</span><span class="mate">Mate</span></span>
+    </div>
 </div>
-</body>
+<app-sign-in></app-sign-in>
 <app-side-navigation></app-side-navigation>
+</body>
+</html>
+
+
+
+
+
+
+

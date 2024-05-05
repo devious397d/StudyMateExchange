@@ -45,7 +45,7 @@ export class StudentsTableComponent implements OnInit {
   }
 
   getStudents(text: string = ''): void {
-    this.studentService.getStudents()
+    this.studentService.getStudents(text)
       .subscribe(students => this.students = students);
   }
 
