@@ -1,20 +1,8 @@
-mat-grid-tile {
-  border-radius: 50px;
-  background: #C3C3C3;
-}
-article{
-  text-align: center;
-}
-.mat-form-field{
-  width: 500px;
-}
 .change-width{
   width: 100%!important;
   min-width: unset!important;
 
 }
-
-
 .example-accordion {
   display: block;
   width: 100%!important;

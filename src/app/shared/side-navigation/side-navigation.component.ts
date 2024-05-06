@@ -6,7 +6,7 @@ import {MatGridList, MatGridTile} from "@angular/material/grid-list";
 import {MatTab, MatTabGroup, MatTabLink, MatTabNav, MatTabNavPanel} from "@angular/material/tabs";
 import {StudySessionsComponent} from "../../paths/study-sessions/study-sessions.component";
 import {StudentsTableComponent} from "../../paths/students-table/students-table.component";
-import {SignInComponent} from "../../paths/sign-in/sign-in.component";
+import {ProfileContent, SignInComponent} from "../../paths/sign-in/sign-in.component";
 
 @Component({
   selector: 'app-side-navigation',
@@ -25,6 +25,7 @@ import {SignInComponent} from "../../paths/sign-in/sign-in.component";
     StudySessionsComponent,
     StudentsTableComponent,
     SignInComponent,
+    ProfileContent,
     //SearchBarComponent
   ],
   providers: [StudentService],
@@ -32,7 +33,8 @@ import {SignInComponent} from "../../paths/sign-in/sign-in.component";
   styleUrl: './side-navigation.component.css'
 })
 export class SideNavigationComponent {
-  constructor(private studentService: StudentService) {
+  constructor(public studentService: StudentService) {
 
   }
+
 }

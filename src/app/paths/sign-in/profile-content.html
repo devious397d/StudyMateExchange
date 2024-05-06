@@ -1,0 +1,25 @@
+<div class="title">
+  Profile
+</div>
+<mat-grid-list cols="2" rowHeight="250px">
+  <mat-grid-tile>
+    <div>
+      First Name: {{userProf[0].firstName}}
+      <br>Last Name: {{userProf[0].lastName}}
+      <br>Email: {{userProf[0].email}}
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <div>
+      Enrolled Classes <br><br>
+      <div id="demo"></div>
+      {{allTitles.at(0)}} <br>
+      {{allTitles.at(1)}} <br>
+      {{allTitles.at(2)}} <br>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
+<br>
+<div class="move-middle">
+  <button mat-raised-button color="warn" type="submit" [style.width.px]=500 (click)="logOff()">Log Off</button>
+</div>

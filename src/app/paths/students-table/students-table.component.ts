@@ -14,6 +14,7 @@ import {
   MatRowDef,
   MatTable
 } from "@angular/material/table";
+import {CdkAccordion, CdkAccordionItem} from "@angular/cdk/accordion";
 
 @Component({
   selector: 'app-students-table',
@@ -29,9 +30,12 @@ import {
     MatRowDef,
     MatHeaderRow,
     MatHeaderRowDef,
-    SearchBarComponent
+    SearchBarComponent,
+    CdkAccordion,
+    CdkAccordionItem
   ],
   providers: [StudentService],
+  styleUrl: 'student-table.component.css',
   templateUrl: './students-table.component.html'
 })
 export class StudentsTableComponent implements OnInit {
@@ -50,6 +54,7 @@ export class StudentsTableComponent implements OnInit {
   }
 
   receiveMessage(message: string) {
+    console.log("got message");
     this.getStudents(message);
   }
 

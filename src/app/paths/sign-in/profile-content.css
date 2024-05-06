@@ -1,0 +1,23 @@
+div{
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.title{
+  font-size: 30px;
+  text-align: center;
+}
+button {
+  background-color: red;
+  color: white;
+}
+.move-middle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

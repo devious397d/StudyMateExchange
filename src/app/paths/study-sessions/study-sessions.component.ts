@@ -62,13 +62,6 @@ export class StudySessionsComponent implements OnInit {
   ctime: string;
   cmeetinglocation:string;
 
-  courseIcons: string[] = [
-    'src/assets/icon_1.png',
-    'src/assets/icon_2.png',
-    'src/assets/icon_3.png',
-    // Add more icon paths as needed
-  ];
-
     constructor(private studentService: StudentService,
               public dialog: MatDialog,) {
 
@@ -76,11 +69,6 @@ export class StudySessionsComponent implements OnInit {
   ngOnInit(): void {
     this.getSessions();
   }
-
-  getRandomCourseIcon(): string {
-    return this.courseIcons[Math.floor(Math.random() * this.courseIcons.length)];
-  }
-
   getSessions(text: string = ''): void {
     this.studentService.getSessions(text)
       .subscribe(sessions => this.sessions = sessions);

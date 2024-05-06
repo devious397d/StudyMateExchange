@@ -1,14 +1,9 @@
 {
-  "students": [
+  "logins": [
     {
       "id": 1,
       "lastName": "Suzuki",
       "firstName": "Hiro",
-      "language": "Japanese",
-      "sessions": [
-        1,
-        4
-      ],
       "email": "kegrullubrecroi-5099@gmail.com",
       "password": "98Fe0e;i2wXP"
     },
@@ -16,11 +11,6 @@
       "id": 2,
       "lastName": "Tanaka",
       "firstName": "Kenshi",
-      "language": "Japanese",
-      "sessions": [
-        1,
-        4
-      ],
       "email": "yeudateizeicrau-9959@yahoo.com",
       "password": "pD15l2zbx£["
     },
@@ -28,11 +18,6 @@
       "id": 3,
       "lastName": "Martinez",
       "firstName": "Diego",
-      "language": "Spanish",
-      "sessions": [
-        2,
-        5
-      ],
       "email": "yeudateizeicrau-9959@gmail.com",
       "password": "w/V67£6T2%/G"
     },
@@ -40,11 +25,6 @@
       "id": 4,
       "lastName": "Rodriguez",
       "firstName": "Maria",
-      "language": "Spanish",
-      "sessions": [
-        2,
-        5
-      ],
       "email": "mattuddemmeuwau-7946@hotmail.com",
       "password": "sE/727}hY`KI"
     },
@@ -52,11 +32,6 @@
       "id": 5,
       "lastName": "Patel",
       "firstName": "Aarav",
-      "language": "Hindi",
-      "sessions": [
-        3,
-        6
-      ],
       "email": "prougreinnaxeize-3334@yahoo.com",
       "password": "rZ81#3F><eL|"
     },
@@ -65,10 +40,6 @@
       "lastName": "Khan",
       "firstName": "Ayesha",
       "language": "Hindi",
-      "sessions": [
-        3,
-        6
-      ],
       "email": "treittuzecomo-4016@aol.com",
       "password": "95Dn5}J`My#;"
     },
@@ -76,12 +47,6 @@
       "id": 7,
       "lastName": "Gonzales",
       "firstName": "Danielle",
-      "language": "English",
-      "sessions": [
-        3,
-        4,
-        6
-      ],
       "email": "danie3997@gmail.com",
       "password": "Password123"
     }

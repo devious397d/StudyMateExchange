@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {Student} from "../types/student";
 import {StudySession} from "../types/study-session";
+import {FormControl} from "@angular/forms";
 
 
 @Injectable({
@@ -12,6 +13,12 @@ import {StudySession} from "../types/study-session";
 export class StudentService {
   private studentURL = 'assets/studentDB.json';
   private sessionsURL = 'assets/sessionsDB.json';
+
+  public tabs = [];
+  public selected = new FormControl(0);
+  public logInDisable = false;
+  public loggedEmail: string;
+  public profileInfo = [];
 
   constructor(private http: HttpClient) {
   }
@@ -58,9 +65,13 @@ export class StudentService {
         || sessions?.description.toLowerCase().includes(temp_txt) || sessions?.meetinglocation.toLowerCase().includes(temp_txt)
     );;
   }
-
-
-
+  addTab(name:string) {
+    this.tabs.push(name);
+  }
+  removeTab(index: number) {
+    this.tabs.splice(index, 1);
+    this.selected.setValue(index);
+  }
 }
 
 

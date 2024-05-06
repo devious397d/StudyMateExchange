@@ -4,4 +4,6 @@ export interface Student {
   firstName: string;
   language: string;
   sessions: number[];
+  email: string,
+  password: string
 }

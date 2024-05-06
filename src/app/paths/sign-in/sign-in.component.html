@@ -1,15 +1,15 @@
-<header>
-    <form action="#" method="post">
-        <div class="form-group">
-            <mat-form-field appearance="fill">
-                <mat-label>Email:</mat-label>
-                <input matInput type="email" id="femail" name="femail" required>
-            </mat-form-field> <br>
-            <mat-form-field appearance="fill">
-                <mat-label>Password:</mat-label>
-                <input matInput type="password" id="fpassword" name="fpassword" required>
-            </mat-form-field>
-            <button mat-raised-button color="warn" type="submit">Sign in</button>
-        </div>
-    </form>
+<header> <br><br>
+  <form action="#" method="post">
+    <div class="form-group">
+      <mat-form-field appearance="fill" [style.width.px]=500>
+        <mat-label>Email:</mat-label>
+        <input matInput type="email" [(ngModel)]="email" name="femail" required>
+      </mat-form-field> <br>
+      <mat-form-field appearance="fill"[style.width.px]=500>
+        <mat-label>Password:</mat-label>
+        <input matInput type="password" [(ngModel)]="password" name="fpassword" required>
+      </mat-form-field> <br>
+      <button mat-raised-button color="warn" type="submit" [style.width.px]=500 (click)="signIn(email)">Sign in</button>
+    </div>
+  </form>
 </header>
