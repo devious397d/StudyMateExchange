@@ -4,7 +4,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-  selector: 'app-search-bar',
+  selector: 'app-search-bar-session',
   standalone: true,
   imports: [
     MatInputModule,
@@ -21,9 +21,9 @@ import { MatButtonModule } from '@angular/material/button';
 
 
   `,
-  styleUrl: './search-bar.component.css'
+  styleUrl: './search-bar-session.component.css'
 })
-export class SearchBarComponent {
+export class SearchBarSessionComponent {
   searchQuery: string = '';
   @Output() messageEvent = new EventEmitter<string>();
 

@@ -50,7 +50,6 @@ export class StudentsTableComponent implements OnInit {
   }
 
   receiveMessage(message: string) {
-    console.log("got message");
     this.getStudents(message);
   }
 

@@ -39,11 +39,28 @@ export class StudentService {
   }
 
 
-  getSessions(): Observable<StudySession[]>{
+  getSessions(text: string = ''): Observable<StudySession[]>{
     return this.http.get<{ sessions: StudySession[] }>(this.sessionsURL).pipe(
-        map(({sessions}) => sessions)
+        map(({sessions}) => this.filterSessions(sessions, text))
     );
   }
+
+  filterSessions(sessions: StudySession[], text: string) {
+    if (text == '') {
+      return sessions;
+    }
+
+    let student: Student[] = [];
+    let temp_txt = text.toLowerCase();
+
+    return sessions.filter(sessions => sessions?.title.toLowerCase().includes(temp_txt)
+        || sessions?.language.toLowerCase().includes(temp_txt) || sessions?.instructor.toLowerCase().includes(temp_txt)
+        || sessions?.description.toLowerCase().includes(temp_txt) || sessions?.meetinglocation.toLowerCase().includes(temp_txt)
+    );;
+  }
+
+
+
 }
 
 

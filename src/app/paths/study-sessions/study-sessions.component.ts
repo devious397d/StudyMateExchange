@@ -1,6 +1,7 @@
 import {Component, OnInit, Inject, inject} from '@angular/core';
 import {StudentService} from "../../core/services/student.service";
 import {StudySession} from "../../core/types/study-session";
+import {SearchBarSessionComponent} from "../../shared/search-bar-session/search-bar-session.component";
 import {MatGridList, MatGridTile} from "@angular/material/grid-list";
 import {
   MAT_DIALOG_DATA,
@@ -8,14 +9,14 @@ import {
   MatDialogActions,
   MatDialogClose,
   MatDialogContent,
-  MatDialogTitle
-} from "@angular/material/dialog";
+  MatDialogTitle} from "@angular/material/dialog";
 import {MatButton, MatButtonModule} from "@angular/material/button";
 import {MatCard, MatCardModule, MatCardTitle} from "@angular/material/card";
 import {MatFormField, MatLabel} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
 import {FormsModule} from "@angular/forms";
 import {CdkAccordion, CdkAccordionItem} from "@angular/cdk/accordion";
+import {SearchBarComponent} from "../../shared/search-bar/search-bar.component";
 
 
 export interface createSessionData {
@@ -43,7 +44,9 @@ export interface createSessionData {
     MatLabel,
     MatButtonModule,
     CdkAccordion,
-    CdkAccordionItem
+    CdkAccordionItem,
+    SearchBarSessionComponent,
+    SearchBarComponent
   ],
   providers: [StudentService],
   styleUrl: 'study-sessions.compnent.css',
@@ -66,10 +69,15 @@ export class StudySessionsComponent implements OnInit {
   ngOnInit(): void {
     this.getSessions();
   }
-  getSessions(): void {
-    this.studentService.getSessions()
+  getSessions(text: string = ''): void {
+    this.studentService.getSessions(text)
       .subscribe(sessions => this.sessions = sessions);
 
+  }
+
+  receiveMessage(message: string) {
+    console.log("got message");
+    this.getSessions(message);
   }
 
   openSessionDialog(ID:number) {
