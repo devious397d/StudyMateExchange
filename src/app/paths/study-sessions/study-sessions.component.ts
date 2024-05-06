@@ -15,6 +15,8 @@ import {MatCard, MatCardModule, MatCardTitle} from "@angular/material/card";
 import {MatFormField, MatLabel} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
 import {FormsModule} from "@angular/forms";
+import {CdkAccordion, CdkAccordionItem} from "@angular/cdk/accordion";
+
 
 export interface createSessionData {
   ctitle: string;
@@ -38,7 +40,10 @@ export interface createSessionData {
     MatCard,
     MatCardTitle,
     MatCardModule,
-    MatLabel
+    MatLabel,
+    MatButtonModule,
+    CdkAccordion,
+    CdkAccordionItem
   ],
   providers: [StudentService],
   styleUrl: 'study-sessions.compnent.css',

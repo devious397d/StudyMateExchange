@@ -5,13 +5,63 @@ mat-grid-tile {
 article{
   text-align: center;
 }
-div{
-  padding-left: 50%;
-}
 .mat-form-field{
-width: 500px;
+  width: 500px;
+}
+.change-width{
+  width: 100%!important;
+  min-width: unset!important;
+
 }
 
-.card-rightside{
 
+.example-accordion {
+  display: block;
+  width: 100%!important;
+  min-width: unset!important;
+}
+
+.example-accordion-item {
+  display: block;
+  border: solid 1px #ccc;
+}
+
+.example-accordion-item + .example-accordion-item {
+  border-top: none;
+}
+
+.example-accordion-item-header {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.example-accordion-item-description {
+  font-size: 0.85em;
+  color: #999;
+}
+
+.example-accordion-item-header,
+.example-accordion-item-body {
+  padding: 16px;
+}
+
+.example-accordion-item-header:hover {
+  cursor: pointer;
+  background-color: #eee;
+}
+
+.example-accordion-item:first-child {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.example-accordion-item:last-child {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+div{
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
 }

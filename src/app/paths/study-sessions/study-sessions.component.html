@@ -1,19 +1,38 @@
-<mat-card class="card-rightside">
-  <mat-card-header>
-    <mat-card-title>
-      Filters
-    </mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    Search By Title Of Session
-    <input mat-input>
-  </mat-card-content>
-</mat-card>
-
-<div class="button_center">
-  <button mat-button (click)="openCreateClassDialog()">Create Session</button>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<br>
+  <cdk-accordion class="example-accordion">
+      <cdk-accordion-item
+        #accordionItem="cdkAccordionItem"
+        class="example-accordion-item"
+        role="button"
+        tabindex="0"
+        [attr.id]="'accordion-header-'"
+        [attr.aria-expanded]="accordionItem.expanded"
+        [attr.aria-controls]="'accordion-body-'">
+            <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+              Filters
+                <span class="example-accordion-item-description">
+                  Click to {{ accordionItem.expanded ? 'close' : 'open' }}
+                </span>
+            </div>
+        <div
+          class="example-accordion-item-body"
+          role="region"
+          [style.display]="accordionItem.expanded ? '' : 'none'"
+          [attr.id]="'accordion-body-'"
+          [attr.aria-labelledby]="'accordion-header-'">
+            Search By Title Of Session
+            <input mat-input>
+        </div>
+      </cdk-accordion-item>
+  </cdk-accordion>
+<br>
+<div>
+  <button mat-flat-button class="change-width" (click)="openCreateClassDialog()" color="primary">Create Session</button>
 </div>
-
+<br>
 <mat-grid-list cols="2" rowHeight="200px" [gutterSize]="'20px'">
   @for (session of sessions; track session) {
     <mat-grid-tile>

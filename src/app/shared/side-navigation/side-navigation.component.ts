@@ -1,51 +1,38 @@
 import {Component} from '@angular/core';
-import {MatSidenav, MatSidenavContainer, MatSidenavContent} from "@angular/material/sidenav";
-import {MatListItem, MatNavList} from "@angular/material/list";
-import {MatToolbar} from "@angular/material/toolbar";
-import {MatIcon} from "@angular/material/icon";
 import {RouterLink, RouterLinkActive, RouterOutlet} from "@angular/router";
-import {MatButton} from "@angular/material/button";
-import {SearchBarComponent} from "../search-bar/search-bar.component";
-import {Student} from "../../core/types/student";
+//import {SearchBarComponent} from "../../search-bar/search-bar.component";
 import {StudentService} from "../../core/services/student.service";
+import {MatGridList, MatGridTile} from "@angular/material/grid-list";
+import {MatTab, MatTabGroup, MatTabLink, MatTabNav, MatTabNavPanel} from "@angular/material/tabs";
+import {StudySessionsComponent} from "../../paths/study-sessions/study-sessions.component";
+import {StudentsTableComponent} from "../../paths/students-table/students-table.component";
+import {SignInComponent} from "../../paths/sign-in/sign-in.component";
 
 @Component({
   selector: 'app-side-navigation',
   standalone: true,
   imports: [
-    MatSidenav,
-    MatSidenavContent,
-    MatSidenavContainer,
-    MatNavList,
-    MatToolbar,
-    MatIcon,
     RouterOutlet,
-    MatButton,
-    MatListItem,
     RouterLink,
     RouterLinkActive,
-    MatSidenav,
-    SearchBarComponent
+    MatGridList,
+    MatGridTile,
+    MatTabNav,
+    MatTabLink,
+    MatTabNavPanel,
+    MatTabGroup,
+    MatTab,
+    StudySessionsComponent,
+    StudentsTableComponent,
+    SignInComponent,
+    //SearchBarComponent
   ],
   providers: [StudentService],
   templateUrl: './side-navigation.component.html',
   styleUrl: './side-navigation.component.css'
 })
 export class SideNavigationComponent {
-
-  students: Student[] = [];
-
   constructor(private studentService: StudentService) {
+
   }
-
-  getStudents(text: string = ''): void {
-    this.studentService.getStudents(text)
-        .subscribe(students => this.students = students);
-  }
-
-  receiveMessage(message: string) {
-    this.getStudents(message);
-  }
-
-
 }

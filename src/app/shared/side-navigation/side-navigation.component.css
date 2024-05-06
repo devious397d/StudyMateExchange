@@ -1,26 +1,22 @@
-.container {
-  width: 100%;
-  height: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+mat-grid-tile {
+  background-color: #6B2639;
 }
-
-.sidenav-content {
-  display: flex;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
+a:link, a:visited, a:hover {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
 }
-
-.sidenav {
-  padding: 20px;
+a:hover {
+  color: pink;
+  background-color: transparent;
+  text-decoration: none;
 }
-
-.active-link {
-  background-color: #820036;
+a:active {
+  color: pink;
+  background-color: transparent;
+  text-decoration: underline;
 }
-
-.title {
-  margin: 0 auto;
+.example-action-button {
+  margin-top: 8px;
+  margin-right: 8px;
 }
-
-
