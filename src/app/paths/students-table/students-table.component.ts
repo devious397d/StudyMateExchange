@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Student} from "../../core/types/student";
 import {StudentService} from "../../core/services/student.service";
-import {SearchBarComponent} from "../../search-bar/search-bar.component";
+import {SearchBarComponent} from "../../shared/search-bar/search-bar.component";
 import {
   MatCell,
   MatCellDef,
