@@ -29,9 +29,13 @@ export class StudentService {
 
     let student: Student[] = [];
     let temp_arr: Student[] = [];
+    let temp_txt = text.toLowerCase();
+
     temp_arr = students.filter(students => students?.firstName.toLowerCase().includes(text.toLowerCase()));
 
-    return students.filter(students => students?.firstName.toLowerCase().includes(text.toLowerCase()));;
+    return students.filter(students => students?.firstName.toLowerCase().includes(temp_txt)
+    || students?.lastName.toLowerCase().includes(temp_txt) || students?.language.toLowerCase().includes(temp_txt)
+    );;
   }
 
 
