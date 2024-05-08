@@ -90,6 +90,18 @@
             </div>
         </mat-grid-tile>
     }
+    @for (session of newSessions; track session) {
+      <mat-grid-tile>
+        <div class="post-container">
+          <div class="post-title" (click)="openSessionDialog(session.id)">{{ session.title }}</div>
+          <div class="post-content">{{ session.language }}</div>
+          <div class="post-content">{{ session.date }}</div>
+          <div class="post-content">{{ session.time }}</div>
+          <button mat-button class="post-button" (click)="openSessionDialog(session.id)">Join</button>
+          <img class="profile-icon" src="../../assets/icon_1.png" alt="Profile Picture">
+        </div>
+      </mat-grid-tile>
+    }
 </mat-grid-list>
 
 

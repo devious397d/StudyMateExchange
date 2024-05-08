@@ -15,6 +15,7 @@ import {
   MatTable
 } from "@angular/material/table";
 import {CdkAccordion, CdkAccordionItem} from "@angular/cdk/accordion";
+import {Observable, Subscription, interval, switchMap} from 'rxjs';
 
 @Component({
   selector: 'app-students-table',
@@ -40,12 +41,21 @@ import {CdkAccordion, CdkAccordionItem} from "@angular/cdk/accordion";
 })
 export class StudentsTableComponent implements OnInit {
   students: Student[] = [];
+  private updateSubscription: Subscription;
 
-  constructor(private studentService: StudentService) {
+  constructor(public studentService: StudentService) {
   }
 
   ngOnInit(): void {
+    //this.getUpdatedStudents()
+    this.updateSubscription = interval(3000).subscribe(
+      (val) => { this.getUpdatedStudents()});
+    //this.getStudents();
+  }
+  getUpdatedStudents(text: string = '') {
     this.getStudents();
+    this.students = this.studentService.allStudents;
+    return this.students;
   }
 
   getStudents(text: string = ''): void {
@@ -57,5 +67,4 @@ export class StudentsTableComponent implements OnInit {
     console.log("got message");
     this.getStudents(message);
   }
-
 }

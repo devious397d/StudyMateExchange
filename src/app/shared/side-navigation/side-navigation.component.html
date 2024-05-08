@@ -1,16 +1,25 @@
 <mat-tab-group [selectedIndex]="studentService.selected.value"
                (selectedIndexChange)="studentService.selected.setValue($event)">
-  <mat-tab label="Sessions"> <app-study-sessions></app-study-sessions> </mat-tab>
-  <mat-tab label="Students"> <app-students-table></app-students-table> </mat-tab>
-  <mat-tab label="Sign In" [disabled]="studentService.logInDisable"> <app-sign-in></app-sign-in> </mat-tab>
+  <mat-tab label="Sign In" [disabled]="studentService.logInDisable">
+    <ng-template matTabContent>
+      <app-sign-in></app-sign-in>
+    </ng-template>
+  </mat-tab>
   @for (tab of studentService.tabs; track tab; let index = $index) {
     <mat-tab [label]="tab">
-      <profile-content></profile-content>
-      <button mat-raised-button
-              class="example-delete-tab-button"
-              (click)="studentService.removeTab(index)">
-        Delete Tab
-      </button>
+      <ng-template matTabContent>
+        <profile-content></profile-content>
+      </ng-template>
     </mat-tab>
   }
+  <mat-tab label="Sessions">
+    <ng-template matTabContent>
+    <app-study-sessions></app-study-sessions>
+    </ng-template>
+  </mat-tab>
+  <mat-tab label="Students">
+    <ng-template matTabContent>
+      <app-students-table></app-students-table>
+    </ng-template>
+  </mat-tab>
 </mat-tab-group>

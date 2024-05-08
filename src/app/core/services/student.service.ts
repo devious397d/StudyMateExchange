@@ -20,13 +20,21 @@ export class StudentService {
   public loggedEmail: string;
   public profileInfo = [];
 
+  public signedIn: boolean = false;
+  public allStudents: Student[] = [];
+
   constructor(private http: HttpClient) {
+    this.getStudents()
+      .subscribe(students => this.allStudents = students);
   }
 
   getStudents(text: string = ''): Observable<Student[]> {
     return this.http.get<{ students: Student[] }>(this.studentURL).pipe(
         map(({students}) => this.filterStudents(students, text))
     );
+  }
+  getUpdatedStudents(text: string = '') {
+    return this.allStudents;
   }
 
   filterStudents(students: Student[], text: string): Student[] {
@@ -67,10 +75,17 @@ export class StudentService {
   }
   addTab(name:string) {
     this.tabs.push(name);
+    this.signedIn = true;
+    console.log('signed in adding tab?: ' + this.signedIn)
   }
   removeTab(index: number) {
     this.tabs.splice(index, 1);
     this.selected.setValue(index);
+    this.signedIn = false;
+    console.log('signed in?: ' + this.signedIn)
+  }
+  giveLogInStatus(){
+    return this.signedIn;
   }
 }
 

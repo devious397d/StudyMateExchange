@@ -10,6 +10,8 @@
         <input matInput type="password" [(ngModel)]="password" name="fpassword" required>
       </mat-form-field> <br>
       <button mat-raised-button color="warn" type="submit" [style.width.px]=500 (click)="signIn(email)">Sign in</button>
+      <div><br></div>
+      <button mat-raised-button color="primary" type="submit" [style.width.px]=500 (click)="newUser()">New User</button>
     </div>
   </form>
 </header>

@@ -1,0 +1,28 @@
+<mat-dialog-content>
+  <mat-form-field [style.width.px]=500>
+    <mat-label>First Name</mat-label>
+    <input matInput [(ngModel)]="data.pfirstName">
+  </mat-form-field><br>
+  <mat-form-field [style.width.px]=500>
+    <mat-label>Last Name</mat-label>
+    <input matInput [(ngModel)]="data.plastName">
+  </mat-form-field><br>
+  <mat-form-field [style.width.px]=500>
+    <mat-label>Fluent Language</mat-label>
+    <input matInput [(ngModel)]="data.planguage">
+  </mat-form-field><br>
+  <mat-form-field [style.width.px]=500>
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="data.pemail">
+  </mat-form-field><br>
+  <mat-form-field [style.width.px]=500>
+    <mat-label>Password</mat-label>
+    <input type="password" matInput [(ngModel)]="data.ppassword">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button mat-button [mat-dialog-close]="data" [style.font-size.px] = 20 cdkFocusInitial>Join StudyMate!</button>
+</mat-dialog-actions>
+<mat-dialog-actions align="center">
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

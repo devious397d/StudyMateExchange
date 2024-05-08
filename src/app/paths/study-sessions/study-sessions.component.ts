@@ -1,4 +1,4 @@
-import {Component, OnInit, Inject, inject} from '@angular/core';
+import {Component, OnInit, Inject, inject, ViewChild} from '@angular/core';
 import {StudentService} from "../../core/services/student.service";
 import {StudySession} from "../../core/types/study-session";
 import {SearchBarSessionComponent} from "../../shared/search-bar-session/search-bar-session.component";
@@ -17,7 +17,8 @@ import {MatInput} from "@angular/material/input";
 import {FormsModule} from "@angular/forms";
 import {CdkAccordion, CdkAccordionItem} from "@angular/cdk/accordion";
 import {SearchBarComponent} from "../../shared/search-bar/search-bar.component";
-
+import { Observable,Subscription, interval  } from 'rxjs';
+import {SignInComponent} from "../sign-in/sign-in.component";
 
 export interface createSessionData {
   ctitle: string;
@@ -53,6 +54,8 @@ export interface createSessionData {
   templateUrl: './study-sessions.component.html',
 })
 export class StudySessionsComponent implements OnInit {
+  @ViewChild(SignInComponent) signIn;
+
   sessions: StudySession[] = [];
   ctitle: string;
   clanguage: string;
@@ -62,10 +65,14 @@ export class StudySessionsComponent implements OnInit {
   ctime: string;
   cmeetinglocation:string;
 
-    constructor(private studentService: StudentService,
-              public dialog: MatDialog,) {
+  newSessions: StudySession[] = [];
+  private updateSubscription: Subscription;
 
+    constructor(public studentService: StudentService,
+              public dialog: MatDialog,) {
+      console.log('signed in???: ' + this.signIn)
   }
+
   ngOnInit(): void {
     this.getSessions();
   }
@@ -82,7 +89,7 @@ export class StudySessionsComponent implements OnInit {
 
   openSessionDialog(ID:number) {
 
-    console.log(ID);
+    console.log('signed in???: ' + this.studentService.giveLogInStatus());
 
     var newData = this.sessions.filter(object => {
       return object['id'] == ID;
@@ -120,8 +127,6 @@ export class StudySessionsComponent implements OnInit {
     });
   }
   openCreateClassDialog(){
-    let watcherId = this.getNextID(this.sessions);
-    console.log(watcherId);
 
     const dialogRef = this.dialog.open(CreateDialogContent,{
       data: {
@@ -134,7 +139,18 @@ export class StudySessionsComponent implements OnInit {
         cmeetinglocation: this.cmeetinglocation
       }
     })
-    dialogRef.afterClosed().subscribe()
+    dialogRef.afterClosed().subscribe(results => {
+      this.sessions.push({
+        date: results.cdate,
+        description: results.cdescription,
+        id: 7,
+        instructor: results.cinstructor,
+        language: results.clanguage,
+        meetinglocation: results.cmeetinglocation,
+        time: results.ctime,
+        title: results.ctitle
+      })
+    })
   }
   getNextID(obj){
     return (Math.max.apply(Math, obj.map(function(o) {
@@ -154,10 +170,13 @@ export class StudySessionsComponent implements OnInit {
     MatButtonModule],
 })
 export class SessionDialogContent {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any,
+              public studentService : StudentService) {
   }
   onJoinClick(){
-    this.data.close()
+
+    alert("You Have Joined The Class");
+
   }
 }
 
@@ -183,8 +202,5 @@ export class CreateDialogContent {
   constructor(@Inject(MAT_DIALOG_DATA) public data: createSessionData,
               private studentService: StudentService) {
 
-  }
-  submitCreateSession(stitle: string, clanguage: string,cinstructor: string,cdescription: string,cdate: string,ctime: string,cmeetinglocation: string){
-    console.log(stitle);
   }
 }
